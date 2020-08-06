@@ -59,6 +59,11 @@ public class SauceLabsAPI {
 		this.Tunnel = new SauceLabsTunnel(userName, accessKey, this);
 	}
 	
+	/**
+	 * Get SauceLabsTunnel Object
+	 * @author Akshay Lakhmani
+	 * @return
+	 */
 	public SauceLabsTunnel Tunnel()
 	{
 		return Tunnel;

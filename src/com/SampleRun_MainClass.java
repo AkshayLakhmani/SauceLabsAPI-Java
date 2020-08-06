@@ -1,5 +1,6 @@
 package com;
 
+import java.io.File;
 import java.io.IOException;
 
 import com.apl.saucelabs.SauceLabsAPI;
@@ -67,8 +68,31 @@ public class SampleRun_MainClass {
 			SauceLabsLog.info("Tunnel is already active");
 		api.Tunnel().closeTunnel();
 
-
-
+		
+		//**********************************//
+		//****	SauceLabsAPI Methods	****//
+		//**********************************//
+		
+		
+		api.getUser();						//Returns a String (in JSON format) representing the basic account information
+		api.getUserName();					//Get SauceLabs User Name
+		api.getActivity();					//Retrieve the activity details of the user.
+		api.getBuild("build-1.0");			//Retrieve build info
+		api.getBuildFullJobs("build-1.0");	//Retrieve jobs associated with a build
+		api.getConcurrency();				//Retrieve the concurrency details of the user.
+		api.getStoredFiles();				//Returns a String (in JSON format) representing the stored files list
+		api.setProxy("Host", 0000);			//Set proxy while connect to SauceLabs API
+		api.Tunnel();						//Get SauceLabsTunnel Object
+		api.getTunnels();					//Retrieve the details of the tunnels currently associated with the user
+		api.getTunnelInformation("TunnelId");//Retrieve the details of the tunnels currently associated with the user
+		api.setReadTimeout(10);				//Set Read Timeout while connect to SauceLabs Server
+		api.setConnectTimeout(10);			//Set Connection Timeout while connect to SauceLabs Server
+		api.uploadFile(new File("C:\test.txt"));				//Uploads a file to Sauce storage.
+		api.uploadFile(new File("C:\test.txt"), "test.txt");		//Uploads a file to Sauce storage.
+		api.uploadFile(new File("C:\test.txt"), "test.txt", true);			//Uploads a file to Sauce storage.
+//		api.uploadFile(InputStream, "test.txt", false);	//Uploads a file to Sauce storage.
+		
+	
 	}
 
 }
