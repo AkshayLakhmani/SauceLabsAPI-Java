@@ -49,7 +49,7 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.5.1</version>
 				<configuration>
-					<!-- Java Version-->
+					<!-- Java Version -->
 					<source>1.7</source>
 					<target>1.7</target>
 				</configuration>
