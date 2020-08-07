@@ -20,8 +20,18 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 1.7
-    - name: Git Semantic Version
-      uses: PaulHatch/semantic-version@v2.1.1
+    - uses: paulhatch/semantic-version@v2.1.1
+      with:
+        # The branch to count commits on
+        branch: "master"
+        # The prefix to use to identify tags
+        tag_prefix: "MINOR"
+        # A string which, if present in a git commit, indicates that a change represents a major (breaking) change
+        major_pattern: "(MAJOR)"
+        # Same as above except indicating a minor change
+        minor_pattern: "(MINOR)"
+        # A string to determine the format of the version output
+        format: "${major}.${minor}.${increment}"
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     - name: Publish to GitHub Packages Apache Maven
