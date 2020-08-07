@@ -54,6 +54,19 @@
 					<target>1.7</target>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>com.amashchenko.maven.plugin</groupId>
+				<artifactId>gitflow-maven-plugin</artifactId>
+				<version>1.13.0</version>
+				<configuration>
+					<!-- Configure branches -->
+					<gitFlowConfig>
+						<productionBranch>master</productionBranch>
+						<!-- default is develop, but we use development -->
+						<developmentBranch>development</developmentBranch>
+					</gitFlowConfig>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 
